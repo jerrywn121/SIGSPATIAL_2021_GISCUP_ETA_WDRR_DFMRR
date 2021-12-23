@@ -1,0 +1,294 @@
+nohup: ignoring input
+{'n_cpu': 32, 'device': device(type='cuda', index=0), 'batch_size_test': 8192, 'batch_size': 4096, 'use_multi_gpu_for_train': True, 'lr': 0.001, 'min_lr': 0.0001, 'weight_decay': 0, 'display_interval': 90, 'num_epochs': 50, 'early_stopping': True, 'patience': 4, 'gradient_clipping': True, 'clipping_threshold': 1.0, 'data_dir': PosixPath('/user-data/data_16_31'), 'chk_path': 'checkpoint.chk', 'all_features': {'dense': ['distance', 'simple_eta', 'links_time_total', 'crosses_time_total'], 'sparse': ['time_slice_id_5m', 'time_slice_id_30m', 'day_of_week', 'is_holiday', 'weather'], 'seq_link': {'dense': ['links_time', 'links_ratio'], 'sparse': ['links_current_status', 'is_cross', 'num_next_links', 'num_prev_links']}, 'seq_cross': {'dense': ['crosses_time'], 'sparse': []}}, 'features_to_use': {'dense': ['distance', 'simple_eta', 'links_time_total', 'crosses_time_total'], 'sparse': ['time_slice_id_30m', 'day_of_week', 'weather'], 'seq_link': {'dense': ['links_time', 'links_ratio'], 'sparse': ['links_current_status', 'is_cross', 'num_next_links', 'num_prev_links']}, 'seq_cross': {'dense': ['crosses_time'], 'sparse': []}}, 'emb_dim': 20, 'sparse_num_emb': {'time_slice_id_5m': 288, 'time_slice_id_30m': 48, 'day_of_week': 7, 'is_holiday': 2, 'weather': 5, 'links_current_status': 5, 'is_cross': 3, 'num_next_links': 8, 'num_prev_links': 8}, 'dense_field_dims': 4, 'sparse_field_dims': [48, 7, 5], 'train_period': ['20200816', '20200827'], 'eval_period': ['20200828', '20200829'], 'test_period': ['20200830', '20200831'], 'model': 'WDRR', 'wide': {'output_dim': 256}, 'deep': {'hidden_dims': [256, 256], 'output_dim': 256, 'batchnorm': False, 'dropout': 0.1}, 'rnn': {'use_seq_link': True, 'use_seq_cross': True, 'hidden_dim': 256, 'num_layers': 2, 'type': 'LSTM', 'bidirectional': False, 'init_from_deep': False, 'auxiliary_loss': False, 'emb_dim': 20, 'output_dim': 256}, 'head': {'head_hidden_dim': 32}}
+reading data from /user-data/data_16_31
+processing training set
+loading files from ['20200816', '20200817', '20200818', '20200819', '20200820', '20200821', '20200822', '20200823', '20200824', '20200825', '20200826', '20200827']
+{'dense': (3715897, 4), 'sparse': (3715897, 3), 'sparse_cross': 'removed, will never be used', 'seq_link_dense': 3715897, 'seq_link_sparse': 3715897, 'seq_cross_dense': 3715897, 'links_arrival_status': 'did not use', 'ata': (3715897, 1)}
+processing eval set
+loading files from ['20200828', '20200829']
+{'dense': (632743, 4), 'sparse': (632743, 3), 'sparse_cross': 'removed, will never be used', 'seq_link_dense': 632743, 'seq_link_sparse': 632743, 'seq_cross_dense': 632743, 'links_arrival_status': 'did not use', 'ata': (632743, 1)}
+will use 4 GPUs for training
+loading train dataloader
+loading eval dataloader
+
+epoch: 1
+batch training loss: 1.00041
+batch training loss: 0.16733
+batch training loss: 0.15938
+batch training loss: 0.15542
+batch training loss: 0.15781
+batch training loss: 0.15121
+batch training loss: 0.15020
+batch training loss: 0.15062
+batch training loss: 0.15413
+batch training loss: 0.15196
+batch training loss: 0.15119
+epoch training time: 4.603mins
+epoch eval loss: 0.15140, eval time: 53.711 s
+eval loss is improved from inf to 0.15140, saving model
+
+epoch: 2
+batch training loss: 0.15251
+batch training loss: 0.15047
+batch training loss: 0.15245
+batch training loss: 0.14994
+batch training loss: 0.15022
+batch training loss: 0.14915
+batch training loss: 0.14950
+batch training loss: 0.15104
+batch training loss: 0.14849
+batch training loss: 0.14339
+batch training loss: 0.14219
+epoch training time: 4.679mins
+epoch eval loss: 0.14350, eval time: 44.25 s
+eval loss is improved from 0.15140 to 0.14350, saving model
+
+epoch: 3
+batch training loss: 0.14310
+batch training loss: 0.14555
+batch training loss: 0.14502
+batch training loss: 0.14353
+batch training loss: 0.14052
+batch training loss: 0.14030
+batch training loss: 0.13874
+batch training loss: 0.14296
+batch training loss: 0.14169
+batch training loss: 0.14062
+batch training loss: 0.14054
+epoch training time: 4.473mins
+epoch eval loss: 0.13777, eval time: 45.79 s
+eval loss is improved from 0.14350 to 0.13777, saving model
+
+epoch: 4
+batch training loss: 0.14552
+batch training loss: 0.13591
+batch training loss: 0.13838
+batch training loss: 0.14059
+batch training loss: 0.13750
+batch training loss: 0.13979
+batch training loss: 0.13941
+batch training loss: 0.13850
+batch training loss: 0.13941
+batch training loss: 0.14114
+batch training loss: 0.13977
+epoch training time: 4.497mins
+epoch eval loss: 0.13532, eval time: 46.515 s
+eval loss is improved from 0.13777 to 0.13532, saving model
+
+epoch: 5
+batch training loss: 0.13483
+batch training loss: 0.13745
+batch training loss: 0.13521
+batch training loss: 0.13683
+batch training loss: 0.13437
+batch training loss: 0.13804
+batch training loss: 0.13596
+batch training loss: 0.13369
+batch training loss: 0.13463
+batch training loss: 0.13453
+batch training loss: 0.13417
+epoch training time: 4.486mins
+epoch eval loss: 0.13387, eval time: 47.03 s
+eval loss is improved from 0.13532 to 0.13387, saving model
+
+epoch: 6
+batch training loss: 0.13157
+batch training loss: 0.13493
+batch training loss: 0.13276
+batch training loss: 0.14092
+batch training loss: 0.13411
+batch training loss: 0.13815
+batch training loss: 0.13695
+batch training loss: 0.13390
+batch training loss: 0.13097
+batch training loss: 0.13606
+batch training loss: 0.13457
+epoch training time: 4.488mins
+epoch eval loss: 0.13292, eval time: 44.843 s
+eval loss is improved from 0.13387 to 0.13292, saving model
+
+epoch: 7
+batch training loss: 0.13593
+batch training loss: 0.13388
+batch training loss: 0.12977
+batch training loss: 0.13465
+batch training loss: 0.13233
+batch training loss: 0.13391
+batch training loss: 0.13221
+batch training loss: 0.13397
+batch training loss: 0.13226
+batch training loss: 0.13160
+batch training loss: 0.13388
+epoch training time: 4.549mins
+epoch eval loss: 0.13217, eval time: 45.356 s
+eval loss is improved from 0.13292 to 0.13217, saving model
+
+epoch: 8
+batch training loss: 0.13305
+batch training loss: 0.13099
+batch training loss: 0.13609
+batch training loss: 0.13205
+batch training loss: 0.13233
+batch training loss: 0.13437
+batch training loss: 0.12843
+batch training loss: 0.13639
+batch training loss: 0.13238
+batch training loss: 0.13165
+batch training loss: 0.13272
+epoch training time: 4.504mins
+epoch eval loss: 0.13149, eval time: 50.296 s
+eval loss is improved from 0.13217 to 0.13149, saving model
+
+epoch: 9
+batch training loss: 0.13431
+batch training loss: 0.13251
+batch training loss: 0.13472
+batch training loss: 0.13114
+batch training loss: 0.12855
+batch training loss: 0.12965
+batch training loss: 0.13077
+batch training loss: 0.12913
+batch training loss: 0.12746
+batch training loss: 0.13117
+batch training loss: 0.13207
+epoch training time: 4.485mins
+epoch eval loss: 0.13121, eval time: 48.463 s
+eval loss is improved from 0.13149 to 0.13121, saving model
+
+epoch: 10
+batch training loss: 0.13407
+batch training loss: 0.13153
+batch training loss: 0.12776
+batch training loss: 0.13361
+batch training loss: 0.12992
+batch training loss: 0.13040
+batch training loss: 0.12800
+batch training loss: 0.13107
+batch training loss: 0.12856
+batch training loss: 0.12954
+batch training loss: 0.12739
+epoch training time: 4.55mins
+epoch eval loss: 0.13147, eval time: 45.013 s
+Epoch    10: reducing learning rate of group 0 to 3.0000e-04.
+eval loss is not improved for 1 epoch
+
+epoch: 11
+batch training loss: 0.12588
+batch training loss: 0.12746
+batch training loss: 0.12733
+batch training loss: 0.12891
+batch training loss: 0.12928
+batch training loss: 0.12940
+batch training loss: 0.12724
+batch training loss: 0.12938
+batch training loss: 0.12737
+batch training loss: 0.12868
+batch training loss: 0.12434
+epoch training time: 4.504mins
+epoch eval loss: 0.13080, eval time: 46.731 s
+eval loss is improved from 0.13121 to 0.13080, saving model
+
+epoch: 12
+batch training loss: 0.12592
+batch training loss: 0.12977
+batch training loss: 0.12911
+batch training loss: 0.12848
+batch training loss: 0.13036
+batch training loss: 0.12703
+batch training loss: 0.12997
+batch training loss: 0.12693
+batch training loss: 0.12948
+batch training loss: 0.13244
+batch training loss: 0.12894
+epoch training time: 4.513mins
+epoch eval loss: 0.12995, eval time: 45.821 s
+eval loss is improved from 0.13080 to 0.12995, saving model
+
+epoch: 13
+batch training loss: 0.12657
+batch training loss: 0.12939
+batch training loss: 0.12869
+batch training loss: 0.13065
+batch training loss: 0.12822
+batch training loss: 0.12699
+batch training loss: 0.12805
+batch training loss: 0.12745
+batch training loss: 0.12991
+batch training loss: 0.12631
+batch training loss: 0.12761
+epoch training time: 4.49mins
+epoch eval loss: 0.12980, eval time: 45.537 s
+eval loss is improved from 0.12995 to 0.12980, saving model
+
+epoch: 14
+batch training loss: 0.13054
+batch training loss: 0.12963
+batch training loss: 0.12751
+batch training loss: 0.12845
+batch training loss: 0.12767
+batch training loss: 0.12802
+batch training loss: 0.12568
+batch training loss: 0.12662
+batch training loss: 0.12957
+batch training loss: 0.12927
+batch training loss: 0.12827
+epoch training time: 4.518mins
+epoch eval loss: 0.13059, eval time: 48.64 s
+Epoch    14: reducing learning rate of group 0 to 1.0000e-04.
+eval loss is not improved for 1 epoch
+
+epoch: 15
+batch training loss: 0.12811
+batch training loss: 0.12888
+batch training loss: 0.12712
+batch training loss: 0.13008
+batch training loss: 0.12742
+batch training loss: 0.12652
+batch training loss: 0.12789
+batch training loss: 0.12905
+batch training loss: 0.12896
+batch training loss: 0.13080
+batch training loss: 0.12486
+epoch training time: 4.49mins
+epoch eval loss: 0.13084, eval time: 47.829 s
+eval loss is not improved for 2 epoch
+
+epoch: 16
+batch training loss: 0.12724
+batch training loss: 0.12914
+batch training loss: 0.12900
+batch training loss: 0.12999
+batch training loss: 0.12971
+batch training loss: 0.12590
+batch training loss: 0.12756
+batch training loss: 0.12652
+batch training loss: 0.12531
+batch training loss: 0.12954
+batch training loss: 0.12406
+epoch training time: 4.527mins
+epoch eval loss: 0.13076, eval time: 45.72 s
+eval loss is not improved for 3 epoch
+
+epoch: 17
+batch training loss: 0.12681
+batch training loss: 0.12702
+batch training loss: 0.12798
+batch training loss: 0.12397
+batch training loss: 0.12747
+batch training loss: 0.12781
+batch training loss: 0.12648
+batch training loss: 0.12674
+batch training loss: 0.12769
+batch training loss: 0.12647
+batch training loss: 0.12603
+epoch training time: 4.535mins
+epoch eval loss: 0.12983, eval time: 46.414 s
+eval loss is not improved for 4 epoch
+early stopping reached, best score is 0.129800
+======training done======
+
+processing test set
+loading files from ['20200830', '20200831']
+{'dense': (591940, 4), 'sparse': (591940, 3), 'sparse_cross': 'removed, will never be used', 'seq_link_dense': 591940, 'seq_link_sparse': 591940, 'seq_cross_dense': 591940, 'links_arrival_status': 'did not use', 'ata': (591940, 1)}
+loss test: 0.1295339634976371
+Shutdown is processing...
