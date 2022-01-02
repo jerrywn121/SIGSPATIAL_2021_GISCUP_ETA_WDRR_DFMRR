@@ -17,8 +17,10 @@ Codes for the [SIGSPATIAL 2021 GISCUP ETA Contest] (https://www.biendata.xyz/com
   1. Bidirectional LSTM (Bi-LSTM)
   2. Initialize hidden states of Bi-LSTM using embeddings of non-link-cross features, which is also the input to "deep"
   3. Axuiliary LSTM loss (predict link status at arrival time)
+For all models, we train in 2020.08.16 - 2020.08.27, evaluate in 2020.08.28 - 2020.08.29, and test in 2020.08.30 - 2020.08.31
 
-## Result
+## Results
+The reported MAPE on the test set:
 |    | WDR | DeepFM |
 |---|---|---|
 | no Bi-LSTM | 0.1295  | 0.1323 |
