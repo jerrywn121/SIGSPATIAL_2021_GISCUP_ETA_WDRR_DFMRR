@@ -3,7 +3,6 @@ from trainer import Trainer
 from configs import configs
 from torch.utils.data import DataLoader
 from data_loader import OrderDataset, collate_fn
-import os
 
 
 if __name__ == '__main__':
@@ -43,6 +42,3 @@ if __name__ == '__main__':
     trainer.model.load_state_dict(torch.load(configs.chk_path)['net'])
     loss_test = trainer.evaluate(dataloader_test)
     print(f"loss test: {loss_test}")
-    os.system("/root/shutdown")
-
-
