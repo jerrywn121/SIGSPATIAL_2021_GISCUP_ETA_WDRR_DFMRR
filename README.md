@@ -6,7 +6,7 @@ Codes for the [SIGSPATIAL 2021 GISCUP ETA Contest](https://www.biendata.xyz/comp
 - DeepFM
 
 ## Experiments
-- baseline Wide-Deep-Recurrent (WDR) from Didi's paper [Learning to Estimate the Travel Time](https://dl.acm.org/doi/abs/10.1145/3219819.3219900)
+- Baseline: Wide-Deep-Recurrent (WDR) from Didi's paper [Learning to Estimate the Travel Time](https://dl.acm.org/doi/abs/10.1145/3219819.3219900)
 
 - WDR
   1. Bidirectional LSTM (Bi-LSTM)
